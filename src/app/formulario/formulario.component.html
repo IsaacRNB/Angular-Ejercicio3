@@ -1,0 +1,42 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <div class="form-group">
+                    <label for="registeredOn">Registrado en--</label>
+            <input name="registeredOn" formControlName="registeredOn" type="date" />
+                </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre" formControlName="nombre"/>
+            </div>
+            <div class="form-group">
+                <label>Apellidos</label>
+                <input type="text" class="form-control" placeholder="Apellidos" formControlName="apellidos"/>
+            </div>
+            <div class="form-group">
+                <label>Sexo</label>
+                <input type="text" class="form-control" placeholder="Sexo" formControlName="sexo"/>
+            </div>
+            <div class="form-group">
+                <label>Edad</label>
+                <input type="text" class="form-control" placeholder="Edad" formControlName="edad"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-dark" (click)="refrescar()">Refrescar</button>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem">
+                <ul class="list-group list-group-flush" >
+                  <li class="list-group-item">Nombre: {{ f.nombre }}</li>
+                  <li class="list-group-item">Apellidos: {{ form.value.apellidos }}</li>
+                  <li class="list-group-item">Sexo: {{ form.value.sexo }}</li>
+                  <li class="list-group-item">Edad: {{ form.value.edad }}</li>
+                </ul>
+              </div>
+        </div>
+    </div>
+</div>
+
+
